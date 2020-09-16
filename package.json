@@ -1,0 +1,48 @@
+{
+	"name": "dm-base-lit-element",
+	"version": "1.0.0",
+	"description": "extend data manager from litElement",
+	"main": "index.js",
+	"module": "index.js",
+	"author": "https://medium.com/@mauriciogc",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:mauriciogc/dm-base-lit-element.git"
+	},
+	"scripts": {
+		"start": "es-dev-server --app-index demo/index.html --node-resolve --open --watch",
+		"test": "karma start --coverage --watch",
+		"test:watch": "karma start --auto-watch=true --single-run=false"
+	},
+	"lint-staged": {
+		"*.js": [
+			"eslint --fix"
+		]
+	},
+	"husky": {
+		"hooks": {
+			"prepare-commit-msg": "yarn test",
+			"pre-commit": "lint-staged"
+		}
+	},
+	"dependencies": {
+		"data-provider": "mauriciogc/data-provider.git#1.0.0",
+		"lit-element": "^2.4.0",
+		"lit-html": "^1.3.0",
+		"tv4": "^1.3.0"
+	},
+	"devDependencies": {
+		"@open-wc/testing": "^2.5.25",
+		"@open-wc/testing-karma": "^4.0.5",
+		"deepmerge": "^4.2.2",
+		"es-dev-server": "^1.57.4",
+		"eslint": "^7.9.0",
+		"eslint-plugin-no-loops": "^0.3.0",
+		"fetch-mock": "^9.10.7",
+		"husky": "^4.3.0",
+		"karma": "^5.2.2",
+		"lint-staged": "^10.3.0",
+		"pretty-json": "mauriciogc/pretty-json#1.0.0"
+	}
+}

@@ -1,0 +1,27 @@
+{
+	"env": {
+		"es6": true,
+		"node": true
+	},
+	"extends": ["eslint:recommended"],
+	"globals": {
+		"Atomics": "readonly",
+		"SharedArrayBuffer": "readonly"
+	},
+	"parserOptions": {
+		"ecmaVersion": 2018,
+		"sourceType": "module"
+	},
+	"plugins": ["no-loops"],
+	"rules": {
+		"no-unused-vars": "warn",
+		"no-loops/no-loops": 2,
+		"no-console": 1,
+		"no-unexpected-multiline": "warn",
+		"quotes": [
+			2,
+			"double",
+			{ "avoidEscape": true, "allowTemplateLiterals": true }
+		]
+	}
+}
