@@ -67,9 +67,9 @@ window.customElements.define(tagName, DmExample);
 ```javascript
 //dm-example-schema.js
 const dataSchema = (() => {
-	const mapping = {...};
-	const response = {...};
-	const params = {...};
+	const mapping = {...}; //Validate output data
+	const response = {...}; //Validate data response
+	const params = {...}; //Validate data request
 	return { mapping, response, params, };
 })();
 
@@ -90,6 +90,7 @@ export default dataSchema;
 	const dm = document.querySelector("dm-example");
 	dm.host = "...";
 	dm.path = "...";
+	dm.schema = dataSchema;
 	dm.startOperation({});
 
 	dm.addEventListener("request-success", ({ detail }) => {
