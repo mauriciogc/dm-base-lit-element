@@ -128,7 +128,9 @@ describe("all request ", () => {
 		el.schema = dataSchema;
 
 		el.addEventListener("request-error", ({ detail }) => {
-			expect(detail.message).to.equal("Missing required property: params");
+			expect(detail[0].error).to.equal(
+				'Instance does not have required property "params".'
+			);
 		});
 
 		await el.executeOperation({
@@ -147,7 +149,9 @@ describe("all request ", () => {
 		el.schema = dataSchema;
 
 		el.addEventListener("request-error", ({ detail }) => {
-			expect(detail.message).to.equal("Missing required property: completed");
+			expect(detail[0].error).to.equal(
+				'Instance does not have required property "completed".'
+			);
 		});
 
 		fetchMock.mock("begin:https://jsonplaceholder", {
@@ -172,13 +176,11 @@ describe("all request ", () => {
 		);
 
 		el.schema = dataSchema;
-		/*el._setStructure = (data) => {
-			const { title, userId } = data;
-			return { title, userId };
-		};*/
 
 		el.addEventListener("request-error", ({ detail }) => {
-			expect(detail.message).to.equal("Additional properties not allowed");
+			expect(detail[0].error).to.equal(
+				'Property "id" does not match additional properties schema.'
+			);
 		});
 
 		fetchMock.mock("begin:https://jsonplaceholder", {

@@ -9,7 +9,6 @@ module.exports = (config) => {
 					pattern: config.grep ? config.grep : "test/**/*.test.js",
 					type: "module",
 				},
-				"./node_modules/tv4/tv4.js",
 			],
 			esm: { nodeResolve: true },
 			coverageReporter: {
