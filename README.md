@@ -76,10 +76,9 @@ const dataSchema = (() => {
 export default dataSchema;
 ```
 
-### Import tv4 and component
+### Import component
 
 ```html
-<script src="../node_modules/tv4/tv4.js"></script>
 <dm-example></dm-example>
 
 <script type="module">
