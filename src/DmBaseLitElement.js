@@ -1,8 +1,8 @@
 /* global window, CustomEvent */
 import { LitElement, html } from "lit-element";
+import { Validator } from "@cfworker/json-schema";
 
 import "data-provider";
-import { Validator } from "@cfworker/json-schema";
 
 const tagName = "dm-base-lit-element";
 export class DmBaseLitElement extends LitElement {

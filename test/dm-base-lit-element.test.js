@@ -1,5 +1,5 @@
 /* global describe, it*/
-import { html, fixture, expect, elementUpdated } from "@open-wc/testing";
+import { html, fixture, expect } from "@open-wc/testing";
 import fetchMock from "fetch-mock/esm/client";
 
 import "../dm-base-lit-element.js";
